@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Get ownCloud — Downloads</title>
+    <meta
+      name="description"
+      content="Download ownCloud: oCIS (Infinite Scale) and ownCloud 10 servers, Docker images, Helm charts, desktop clients, and mobile apps. The canonical place to get ownCloud."
+    />
+    <meta name="color-scheme" content="dark" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Mark JS available synchronously (so reveal animations only apply with JS),
+         then fire the above-the-fold reveal on DOMContentLoaded without waiting
+         for the deferred main script. With JS disabled, content stays fully visible. -->
+    <script>
+      document.documentElement.classList.add('js')
+      document.addEventListener('DOMContentLoaded', function () {
+        document.body.classList.add('loaded')
+      })
+    </script>
+  </head>
+  <body>
+    <!-- Decorative atmosphere layers: blueprint grid, accent glow, film grain -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
+
+    <!-- Non-intrusive banner shown only if release data fails to load (toggled by app.js) -->
+    <div id="data-banner" class="data-banner" role="status" hidden>
+      Live download data is temporarily unavailable — direct links below still work.
+      Browse everything at <a href="https://github.com/owncloud">github.com/owncloud</a>.
+    </div>
+
+    <!-- ================= §00 HEADER ================= -->
+    <header class="site-header" aria-label="Site header">
+      <div class="rule-stamp">
+        <span class="stamp">REV <span id="stamp-date">2026.06</span> · x86_64 · arm64 · static</span>
+      </div>
+      <div class="header-bar wrap">
+        <a class="brand" href="#top" aria-label="ownCloud — Get ownCloud, home">
+          <svg class="cloud-mark" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true" focusable="false">
+            <path
+              d="M27.2 9.1a8.4 8.4 0 0 0-15.9-2.5A6.4 6.4 0 0 0 6.6 21h19.9a6 6 0 0 0 .7-11.9z"
+              fill="none"
+              stroke="#0082C9"
+              stroke-width="2"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="wordmark">ownCloud</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#server-ocis">Server</a>
+          <a href="#clients">Clients</a>
+          <a href="#mobile">Mobile</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="wrap" aria-label="ownCloud downloads">
+      <!-- left spec-rail designators are drawn per-section via [data-sec] -->
+
+      <!-- ================= §01 HERO ================= -->
+      <section class="hero" data-sec="§01" aria-labelledby="hero-title">
+        <div class="hero-lede reveal">
+          <h1 id="hero-title" class="h1">Get&nbsp;ownCloud</h1>
+          <hr class="accent-rule" aria-hidden="true" />
+          <p class="subline">
+            Self-hosted file sync &amp; share. European digital sovereignty,
+            engineered for infinite scale.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#server-ocis">▸ oCIS&nbsp;(Recommended)</a>
+            <a class="btn btn-ghost" href="#server-oc10">Legacy&nbsp;Server</a>
+          </div>
+        </div>
+
+        <aside class="product-index reveal" aria-label="Product index">
+          <div class="index-head">PRODUCT&nbsp;INDEX</div>
+          <a class="index-row" href="#server-ocis">
+            <span class="desig">[OCIS]</span><span>Server · Infinite Scale</span>
+          </a>
+          <a class="index-row" href="#server-oc10">
+            <span class="desig">[OC10]</span><span>Server · Classic (legacy)</span>
+          </a>
+          <a class="index-row" href="#clients">
+            <span class="desig">[DTOP]</span><span>Desktop · Win / macOS / Linux</span>
+          </a>
+          <a class="index-row" href="#mobile">
+            <span class="desig">[MOBL]</span><span>Mobile · iOS / Android</span>
+          </a>
+        </aside>
+      </section>
+
+      <!-- ================= §02 SERVER · oCIS ================= -->
+      <section id="server-ocis" class="sec sec-flagship" data-sec="§02" aria-labelledby="ocis-title">
+        <div class="sec-head reveal">
+          <h2 id="ocis-title" class="h2">
+            Server · oCIS <span class="dim">— ownCloud Infinite Scale</span>
+          </h2>
+          <span class="badge badge-stable" id="ocis-badge">
+            <span class="dot" aria-hidden="true"></span>STABLE
+            <span id="ocis-version" class="ver">v8.x</span>
+          </span>
+        </div>
+
+        <!-- SIGNATURE: the Infinite Scale Bus (decorative) -->
+        <div class="bus reveal" aria-hidden="true">
+          <span class="node">gateway</span><i class="rail"></i>
+          <span class="node">storage-users</span><i class="rail"></i>
+          <span class="node">postprocessing</span><i class="rail"></i>
+          <span class="node">search</span><i class="rail"></i>
+          <span class="node">sharing</span><i class="rail"></i>
+          <span class="ghost g1">●</span><i class="rail dot"></i>
+          <span class="ghost g2">●</span><i class="rail dot"></i>
+          <span class="ghost g3">●</span><i class="rail dot"></i>
+          <span class="inf">→∞</span>
+        </div>
+
+        <!-- SPEC TABLE -->
+        <dl class="spec-table reveal" aria-label="oCIS release specification">
+          <div class="spec-row"><dt>Release</dt><dd id="spec-release">latest stable</dd></div>
+          <div class="spec-row"><dt>Published</dt><dd id="spec-published">—</dd></div>
+          <div class="spec-row"><dt>Channel</dt><dd>stable</dd></div>
+          <div class="spec-row"><dt>Architectures</dt><dd>linux · macOS &nbsp;/&nbsp; amd64 · arm64</dd></div>
+          <div class="spec-row"><dt>License</dt><dd>Apache-2.0</dd></div>
+          <div class="spec-row"><dt>Integrity</dt><dd>SHA-256 published per binary (<code>.sha256</code>)</dd></div>
+          <div class="spec-row spec-row-wide">
+            <dt>Notes</dt>
+            <dd id="spec-notes">
+              <a id="ocis-changelog" href="https://github.com/owncloud/ocis/releases/latest"
+                >Full changelog →</a
+              >
+              &nbsp;·&nbsp; Nightly / rolling builds:
+              <a href="https://download.owncloud.com/ocis/ocis/rolling/">download.owncloud.com/ocis/rolling →</a>
+            </dd>
+          </div>
+        </dl>
+
+        <!-- DOWNLOAD PARTS -->
+        <div class="parts">
+          <!-- Binaries (dynamic from release assets; static fallback inside) -->
+          <article class="part" aria-labelledby="part-bin">
+            <div class="part-head"><span class="desig" id="part-bin">[OCIS-BIN]</span> OS Binaries</div>
+            <div class="part-body">
+              <div id="ocis-binaries" class="bin-list">
+                <a class="bin-fallback" href="https://github.com/owncloud/ocis/releases/latest"
+                  >Browse binaries on GitHub →</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Container (static) -->
+          <article class="part" aria-labelledby="part-oci">
+            <div class="part-head"><span class="desig" id="part-oci">[OCIS-OCI]</span> Container</div>
+            <div class="part-body">
+              <div class="cmd" data-copy="docker pull owncloud/ocis:latest">
+                <code><span class="prompt">$</span> docker pull owncloud/ocis:latest</code>
+                <button class="copy" type="button" aria-label="Copy Docker Hub pull command">copy</button>
+              </div>
+              <div class="cmd" data-copy="docker pull ghcr.io/owncloud/ocis:latest">
+                <code><span class="prompt">$</span> docker pull ghcr.io/owncloud/ocis:latest</code>
+                <button class="copy" type="button" aria-label="Copy GHCR pull command">copy</button>
+              </div>
+              <p class="part-note">Docker Hub &amp; GitHub Container Registry · multi-arch.</p>
+            </div>
+          </article>
+
+          <!-- Helm (static) -->
+          <article class="part" aria-labelledby="part-helm">
+            <div class="part-head"><span class="desig" id="part-helm">[OCIS-HELM]</span> Helm Chart</div>
+            <div class="part-body">
+              <p class="part-note">Kubernetes deployment via the official chart.</p>
+              <a class="btn btn-ghost btn-block" href="https://github.com/owncloud/ocis-charts"
+                >owncloud/ocis-charts →</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= §03 SERVER · OC10 (demoted) ================= -->
+      <section id="server-oc10" class="sec sec-legacy" data-sec="§03" aria-labelledby="oc10-title">
+        <div class="legacy-row">
+          <div class="legacy-main">
+            <h2 id="oc10-title" class="h3">
+              Server · ownCloud 10 <span class="tag-superseded">SUPERSEDED · maintenance only</span>
+            </h2>
+            <p class="legacy-note">
+              Recommended only for environments not yet ready to migrate to oCIS.
+              See the
+              <a href="https://doc.owncloud.com/server/next/admin_manual/migration/">migration guide</a>
+              for the path forward.
+            </p>
+          </div>
+          <div class="legacy-links">
+            <a class="legacy-link" href="https://github.com/owncloud/core/releases/latest"
+              >Latest tarball →</a
+            >
+            <div class="cmd cmd-sm" data-copy="docker pull owncloud/server:latest">
+              <code><span class="prompt">$</span> docker pull owncloud/server:latest</code>
+              <button class="copy" type="button" aria-label="Copy ownCloud 10 Docker pull command">copy</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= §04 DESKTOP CLIENTS ================= -->
+      <section id="clients" class="sec" data-sec="§04" aria-labelledby="clients-title">
+        <div class="sec-head reveal">
+          <h2 id="clients-title" class="h2">Desktop Clients</h2>
+          <span class="ver-chip">Sync client <span id="client-version">v6.x</span></span>
+        </div>
+        <div class="parts parts-3">
+          <article class="part" aria-labelledby="part-win">
+            <div class="part-head"><span class="desig" id="part-win">[DTOP-WIN]</span> Windows</div>
+            <div class="part-body" id="client-win">
+              <div class="glyph" aria-hidden="true">⊞</div>
+              <a class="btn btn-block" href="https://owncloud.com/desktop-app/">Download →</a>
+            </div>
+          </article>
+          <article class="part" aria-labelledby="part-mac">
+            <div class="part-head"><span class="desig" id="part-mac">[DTOP-MAC]</span> macOS</div>
+            <div class="part-body" id="client-mac">
+              <div class="glyph" aria-hidden="true"></div>
+              <a class="btn btn-block" href="https://owncloud.com/desktop-app/">Download →</a>
+            </div>
+          </article>
+          <article class="part" aria-labelledby="part-lin">
+            <div class="part-head"><span class="desig" id="part-lin">[DTOP-LNX]</span> Linux</div>
+            <div class="part-body" id="client-linux">
+              <div class="glyph" aria-hidden="true">🐧</div>
+              <a class="btn btn-block" href="https://software.opensuse.org/download/package?project=isv:ownCloud:desktop&package=owncloud-client"
+                >openSUSE OBS →</a
+              >
+              <a class="link-sm" href="https://flathub.org/apps/com.owncloud.desktopclient.owncloud">Flatpak (Flathub) →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= §05 MOBILE ================= -->
+      <section id="mobile" class="sec" data-sec="§05" aria-labelledby="mobile-title">
+        <div class="sec-head reveal">
+          <h2 id="mobile-title" class="h2">Mobile Apps</h2>
+        </div>
+        <div class="parts parts-2">
+          <article class="part" aria-labelledby="part-ios">
+            <div class="part-head">
+              <span class="desig" id="part-ios">[MOBL-IOS]</span> iOS
+              <span class="ver-inline" id="ios-version"></span>
+            </div>
+            <div class="part-body">
+              <a class="store-badge" href="https://apps.apple.com/app/owncloud/id543672169" aria-label="Download ownCloud on the App Store">
+                <svg viewBox="0 0 120 40" width="150" height="50" role="img" aria-hidden="true" focusable="false">
+                  <rect x="1" y="1" width="118" height="38" rx="6" fill="none" stroke="#30363D" />
+                  <path d="M27.6 20.3c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.5 2.2 2.6 2.1 1-.04 1.5-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.2 1.1-2.3 1.1-2.3s-2.1-.8-2.1-3.2zm-2.2-5.9c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .1 2-.5 2.5-1.2z" fill="#E6EDF3"/>
+                  <text x="40" y="17" fill="#8B949E" font-family="IBM Plex Sans, sans-serif" font-size="7">Download on the</text>
+                  <text x="40" y="29" fill="#E6EDF3" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600">App Store</text>
+                </svg>
+              </a>
+              <p class="part-note">Universal app · iPad &amp; iPhone.</p>
+            </div>
+          </article>
+          <article class="part" aria-labelledby="part-and">
+            <div class="part-head">
+              <span class="desig" id="part-and">[MOBL-AND]</span> Android
+              <span class="ver-inline" id="android-version"></span>
+            </div>
+            <div class="part-body">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.owncloud.android" aria-label="Get ownCloud on Google Play">
+                <svg viewBox="0 0 120 40" width="150" height="50" role="img" aria-hidden="true" focusable="false">
+                  <rect x="1" y="1" width="118" height="38" rx="6" fill="none" stroke="#30363D" />
+                  <path d="M18 12.5v15l8-7.5-8-7.5z" fill="#0082C9"/>
+                  <path d="M18 12.5l8 7.5 2.6-2.4-8.1-4.6a1 1 0 0 0-2.5-.5z" fill="#E6EDF3" opacity=".7"/>
+                  <text x="36" y="17" fill="#8B949E" font-family="IBM Plex Sans, sans-serif" font-size="7">GET IT ON</text>
+                  <text x="36" y="29" fill="#E6EDF3" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600">Google Play</text>
+                </svg>
+              </a>
+              <a class="store-badge" href="https://f-droid.org/packages/com.owncloud.android/" aria-label="Get ownCloud on F-Droid">
+                <svg viewBox="0 0 120 40" width="150" height="50" role="img" aria-hidden="true" focusable="false">
+                  <rect x="1" y="1" width="118" height="38" rx="6" fill="none" stroke="#30363D" />
+                  <circle cx="22" cy="20" r="7" fill="none" stroke="#3FB950" stroke-width="2"/>
+                  <circle cx="22" cy="20" r="2" fill="#3FB950"/>
+                  <text x="36" y="17" fill="#8B949E" font-family="IBM Plex Sans, sans-serif" font-size="7">GET IT ON</text>
+                  <text x="36" y="29" fill="#E6EDF3" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600">F-Droid</text>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="wrap footer-grid">
+        <div class="colophon">
+          <div class="colophon-line">
+            <span class="ck">PROJECT</span><span class="cv">ownCloud — self-hosted file sync &amp; share</span>
+          </div>
+          <div class="colophon-line">
+            <span class="ck">SOVEREIGNTY</span><span class="cv">your data, your servers, by default</span>
+          </div>
+          <div class="colophon-line">
+            <span class="ck">DATA</span><span class="cv">release metadata cached daily from the GitHub API</span>
+          </div>
+          <div class="colophon-line">
+            <span class="ck">UPDATED</span><span class="cv" id="footer-updated">—</span>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="https://github.com/owncloud">GitHub Org</a>
+          <a href="https://doc.owncloud.com/">Documentation</a>
+          <a href="https://central.owncloud.org/">Community Forum</a>
+          <a href="https://owncloud.com/security-advisories/">Security</a>
+        </nav>
+      </div>
+      <div class="wrap footer-base">
+        <span>© <span id="footer-year">2026</span> ownCloud GmbH</span>
+        <span class="dim">oc-downloads · static · no tracking</span>
+      </div>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

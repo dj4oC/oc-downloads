@@ -1,0 +1,1019 @@
+/* =========================================================================
+   oc-downloads — "DATASHEET // INFINITE"
+   A precision component spec-sheet for ownCloud. Distinctiveness lives in
+   typography, the Infinite Scale Bus, and borders-as-structure — never in
+   decorative color. Palette is pinned; blue is rationed, green = STABLE only.
+   ========================================================================= */
+
+:root {
+  /* pinned brand palette */
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --accent: #0082c9;
+  --accent-hover: #006da6;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --stable: #3fb950;
+
+  /* type */
+  --display: 'Chivo Mono', ui-monospace, SFMono-Regular, monospace;
+  --body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* metrics */
+  --wrap: 1200px;
+  --rail: 68px; /* left spec-rail gutter on desktop */
+  --gap: clamp(1rem, 2.4vw, 1.5rem);
+  --sec-gap: clamp(3.5rem, 7vw, 6rem);
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+code {
+  font-family: var(--mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- atmosphere layers ---------- */
+.bg-grid,
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-grid {
+  background-image:
+    repeating-linear-gradient(to right, rgba(48, 54, 61, 0.05) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(to bottom, rgba(48, 54, 61, 0.05) 0 1px, transparent 1px 32px);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 35%, transparent 95%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 35%, transparent 95%);
+}
+.bg-grain {
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+/* ---------- data-unavailable banner ---------- */
+.data-banner {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0.6rem clamp(1rem, 4vw, 2rem);
+  background: rgba(0, 130, 201, 0.08);
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+.data-banner[hidden] {
+  display: none;
+}
+
+/* =========================================================================
+   §00 HEADER
+   ========================================================================= */
+.site-header {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid var(--border);
+}
+.rule-stamp {
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(0, 130, 201, 0.06), transparent 60%);
+}
+.rule-stamp .stamp {
+  display: block;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0.35rem clamp(1rem, 4vw, 2rem);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+}
+.brand:hover {
+  text-decoration: none;
+}
+.cloud-mark {
+  display: block;
+}
+.wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+.nav {
+  display: flex;
+  gap: clamp(0.8rem, 3vw, 2rem);
+}
+.nav a {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+.nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom-color: var(--accent);
+}
+
+/* =========================================================================
+   SPEC-RAIL  (left-gutter §designators)
+   ========================================================================= */
+main.wrap {
+  padding-top: var(--sec-gap);
+  padding-bottom: var(--sec-gap);
+  padding-left: calc(clamp(1rem, 4vw, 2rem) + var(--rail));
+}
+[data-sec] {
+  position: relative;
+}
+[data-sec]::before {
+  content: attr(data-sec) '';
+  position: absolute;
+  left: calc(-1 * var(--rail));
+  top: 0.25rem;
+  width: calc(var(--rail) - 14px);
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+/* =========================================================================
+   §01 HERO
+   ========================================================================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: start;
+  margin-bottom: var(--sec-gap);
+}
+.h1 {
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: clamp(2.6rem, 8.5vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+.accent-rule {
+  width: 96px;
+  height: 3px;
+  margin: 1.4rem 0;
+  border: 0;
+  background: var(--accent);
+}
+.subline {
+  max-width: 34ch;
+  margin: 0 0 1.8rem;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: var(--muted);
+}
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* product index */
+.product-index {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+}
+.index-head {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.index-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.index-row:last-child {
+  border-bottom: 0;
+}
+.index-row:hover {
+  background: rgba(0, 130, 201, 0.07);
+  text-decoration: none;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.desig {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   BUTTONS / BADGES
+   ========================================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+}
+.btn-ghost {
+  color: var(--text);
+}
+.btn-block {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+.badge-stable {
+  color: var(--stable);
+  border-color: rgba(63, 185, 80, 0.4);
+}
+.badge .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--stable);
+}
+.badge .ver {
+  color: var(--muted);
+  margin-left: 0.2rem;
+}
+
+/* =========================================================================
+   SECTIONS (shared)
+   ========================================================================= */
+.sec {
+  margin-bottom: var(--sec-gap);
+  scroll-margin-top: 1.5rem;
+}
+.sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.4rem;
+}
+.h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+}
+.h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.dim {
+  color: var(--muted);
+  font-weight: 700;
+}
+.ver-chip,
+.ver-inline {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* flagship accent: 2px blue left edge + faint glow */
+.sec-flagship {
+  position: relative;
+}
+.sec-flagship::after {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--rail));
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.7;
+}
+.sec-flagship .sec-head {
+  position: relative;
+}
+
+/* =========================================================================
+   SIGNATURE — Infinite Scale Bus
+   ========================================================================= */
+.bus {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 1.6rem;
+  padding: 0.9rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+}
+.bus::before {
+  /* the single light source on the page */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60%;
+  height: 160px;
+  transform: translateY(-50%);
+  background: radial-gradient(ellipse at left, rgba(0, 130, 201, 0.16), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+.bus .node {
+  flex: 0 0 auto;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--text);
+}
+.bus .rail {
+  flex: 0 0 auto;
+  width: clamp(14px, 3vw, 34px);
+  height: 1px;
+  background: var(--border);
+}
+.bus .rail.dot {
+  width: 20px;
+  background: repeating-linear-gradient(to right, var(--border) 0 3px, transparent 3px 7px);
+}
+.bus .ghost {
+  flex: 0 0 auto;
+  padding: 0 0.25rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+.bus .ghost.g1 {
+  opacity: 0.6;
+}
+.bus .ghost.g2 {
+  opacity: 0.35;
+}
+.bus .ghost.g3 {
+  opacity: 0.12;
+}
+.bus .inf {
+  flex: 0 0 auto;
+  padding-left: 0.3rem;
+  font-family: var(--mono);
+  color: var(--accent);
+  opacity: 0.5;
+}
+
+/* =========================================================================
+   SPEC TABLE
+   ========================================================================= */
+.spec-table {
+  margin: 0 0 1.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.spec-row {
+  display: flex;
+  gap: 0.8rem;
+  min-width: 0; /* allow the grid track to shrink below content min-width */
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.spec-row:nth-child(2n) {
+  border-right: 0;
+}
+.spec-row-wide {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-bottom: 0;
+}
+.spec-table dt {
+  flex: 0 0 7.5rem;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 2px;
+}
+.spec-table dd {
+  margin: 0;
+  min-width: 0;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  color: var(--text);
+  overflow-wrap: anywhere; /* break long URLs/tokens instead of overflowing */
+}
+
+/* =========================================================================
+   DOWNLOAD PARTS
+   ========================================================================= */
+.parts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.parts-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.part {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* let the parts grid track shrink; commands scroll internally */
+}
+.sec-flagship .part {
+  border-color: #3b434d;
+}
+.part:hover {
+  border-color: var(--accent);
+}
+.part-head {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  color: var(--text);
+}
+.part-head .desig {
+  margin-right: 0.4rem;
+}
+.part-head .ver-inline {
+  float: right;
+}
+.part-body {
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+.part-note {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.glyph {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--muted);
+}
+
+/* binary list */
+.bin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.bin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  min-width: 0;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  position: relative;
+  color: var(--text);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.bin .bin-os {
+  min-width: 0;
+}
+.bin:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.bin .bin-os {
+  font-size: 0.85rem;
+}
+.bin .bin-arch {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.bin .bin-size {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-left: auto;
+  padding-left: 0.6rem;
+}
+.bin .bin-dl {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+.bin-fallback,
+.empty-note {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* command blocks */
+.cmd {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  overflow-x: auto;
+}
+.cmd code {
+  font-size: 0.78rem;
+  white-space: nowrap;
+  color: var(--text);
+}
+.cmd .prompt {
+  color: var(--accent);
+  margin-right: 0.4rem;
+}
+.cmd-sm code {
+  font-size: 0.72rem;
+}
+.copy {
+  margin-left: auto;
+  flex: 0 0 auto;
+  padding: 0.2rem 0.55rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+.copy:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.copy.copied {
+  color: var(--stable);
+  border-color: rgba(63, 185, 80, 0.5);
+}
+
+.link-sm {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+/* =========================================================================
+   §03 LEGACY OC10  (demoted)
+   ========================================================================= */
+.sec-legacy {
+  margin-bottom: var(--sec-gap);
+}
+.legacy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--muted);
+  border-radius: var(--radius);
+  background: transparent;
+}
+.legacy-main {
+  max-width: 60ch;
+}
+.tag-superseded {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  vertical-align: middle;
+}
+.legacy-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.legacy-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+.legacy-link {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+/* =========================================================================
+   STORE BADGES
+   ========================================================================= */
+.store-badge {
+  display: inline-block;
+  line-height: 0;
+  border-radius: var(--radius);
+  transition: transform 0.12s ease;
+}
+.store-badge + .store-badge {
+  margin-top: 0.5rem;
+}
+.store-badge:hover {
+  transform: translateY(-1px);
+}
+.store-badge svg rect {
+  transition: stroke 0.12s ease;
+}
+.store-badge:hover svg rect {
+  stroke: var(--accent);
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(0deg, rgba(0, 130, 201, 0.03), transparent);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2rem;
+  padding-top: 2.2rem;
+  padding-bottom: 1.4rem;
+}
+.colophon-line {
+  display: flex;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dotted var(--border);
+  font-size: 0.82rem;
+}
+.colophon-line .ck {
+  flex: 0 0 8rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.colophon-line .cv {
+  color: var(--text);
+}
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.footer-nav a {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+.footer-base {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+.footer-base .dim {
+  color: var(--muted);
+}
+
+/* =========================================================================
+   MOTION — one orchestrated load reveal (JS only)
+   ========================================================================= */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.js body.loaded .reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* stagger within the hero + sections */
+.js body.loaded .hero .hero-lede {
+  transition-delay: 0.08s;
+}
+.js body.loaded .hero .product-index {
+  transition-delay: 0.18s;
+}
+.js body.loaded .sec-head {
+  transition-delay: 0.04s;
+}
+.js body.loaded .bus {
+  transition-delay: 0.12s;
+}
+.js body.loaded .spec-table {
+  transition-delay: 0.2s;
+}
+
+/* bus draw + node pop (only after load) */
+.js .bus .rail {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.js body.loaded .bus .rail {
+  transform: scaleX(1);
+  transition: transform 0.4s ease 0.3s;
+}
+.js .bus .node,
+.js .bus .ghost,
+.js .bus .inf {
+  opacity: 0;
+}
+.js body.loaded .bus .node {
+  opacity: 1;
+  transition: opacity 0.3s ease calc(0.3s + var(--i, 0) * 0.07s);
+}
+.js body.loaded .bus .ghost.g1 {
+  opacity: 0.6;
+  transition: opacity 0.3s ease 0.75s;
+}
+.js body.loaded .bus .ghost.g2 {
+  opacity: 0.35;
+  transition: opacity 0.3s ease 0.82s;
+}
+.js body.loaded .bus .ghost.g3 {
+  opacity: 0.12;
+  transition: opacity 0.3s ease 0.89s;
+}
+.js body.loaded .bus .inf {
+  opacity: 0.5;
+  transition: opacity 0.3s ease 0.95s;
+}
+
+/* the one piece of continuous motion: the stable status dot */
+.badge-stable .dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .parts,
+  .parts-2,
+  .parts-3 {
+    grid-template-columns: 1fr;
+  }
+  .spec-table {
+    grid-template-columns: 1fr;
+  }
+  .spec-row {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* collapse the left spec-rail to a thin top marker per section */
+  main.wrap {
+    padding-left: clamp(1rem, 4vw, 2rem);
+  }
+  [data-sec]::before {
+    position: static;
+    display: block;
+    width: auto;
+    margin-bottom: 0.8rem;
+    border-top: 0;
+    border-left: 2px solid var(--border);
+    padding: 0 0 0 0.6rem;
+  }
+  .sec-flagship::after {
+    left: -0.6rem;
+  }
+  .sec-flagship [data-sec]::before,
+  .sec-flagship::before {
+    border-left-color: var(--accent);
+  }
+}
+
+@media (max-width: 480px) {
+  /* keep the header on one row without clipping the last nav item */
+  .nav {
+    gap: 0.85rem;
+  }
+  .nav a {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+  .wordmark {
+    font-size: 1.1rem;
+  }
+  /* stack the hero CTAs full-width so neither gets clipped */
+  .cta-row .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    font-size: 15px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .footer-base {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .legacy-links {
+    align-items: stretch;
+    width: 100%;
+  }
+  .colophon-line .ck {
+    flex-basis: 6rem;
+  }
+}
+
+/* =========================================================================
+   REDUCED MOTION — render everything in final state, no animation
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal,
+  .js body.loaded .reveal,
+  .js .bus .rail,
+  .js body.loaded .bus .rail,
+  .js .bus .node,
+  .js .bus .ghost,
+  .js .bus .inf,
+  .js body.loaded .bus .node {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .js .bus .ghost.g1 {
+    opacity: 0.6 !important;
+  }
+  .js .bus .ghost.g2 {
+    opacity: 0.35 !important;
+  }
+  .js .bus .ghost.g3 {
+    opacity: 0.12 !important;
+  }
+  .js .bus .inf {
+    opacity: 0.5 !important;
+  }
+  .badge-stable .dot {
+    animation: none;
+  }
+}
