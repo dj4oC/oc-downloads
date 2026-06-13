@@ -87,7 +87,7 @@
             <span class="desig">[OCIS]</span><span>ownCloud Infinite Scale</span>
           </a>
           <a class="index-row" href="#server-oc10">
-            <span class="desig">[OC10]</span><span>Server · Classic (legacy)</span>
+            <span class="desig">[OC10]</span><span>Classic · ownCloud 10 &amp; 11</span>
           </a>
           <a class="index-row" href="#clients">
             <span class="desig">[DTOP]</span><span>Desktop · Win / macOS / Linux</span>
@@ -188,11 +188,7 @@
               </div>
               <p class="part-note">Community chart, installed from source.</p>
               <a class="link-sm" href="https://github.com/owncloud/ocis-charts">owncloud/ocis-charts →</a>
-              <a
-                class="link-sm"
-                href="https://doc.owncloud.com/ocis/next/deployment/container/orchestration/orchestration.html"
-                >Deployment guide →</a
-              >
+              <a class="link-sm" href="https://doc.owncloud.com/ocis/next/deployment/">Deployment guide →</a>
             </div>
           </article>
 
@@ -200,11 +196,13 @@
           <article class="part" aria-labelledby="part-mcp">
             <div class="part-head"><span class="desig" id="part-mcp">[OCIS-MCP]</span> MCP Server</div>
             <div class="part-body">
-              <div class="cmd" data-copy="docker pull owncloud/ocis-mcp-server:latest">
-                <code><span class="prompt">$</span> docker pull owncloud/ocis-mcp-server:latest</code>
-                <button class="copy" type="button" aria-label="Copy MCP server pull command">copy</button>
-              </div>
-              <p class="part-note">Exposes oCIS as AI-accessible tools (Model Context Protocol).</p>
+              <p class="part-note">
+                Exposes oCIS as AI-accessible tools (Model Context Protocol). Pre-built
+                binary — Linux · macOS · Windows (amd64/arm64).
+              </p>
+              <a class="btn btn-block" href="https://github.com/owncloud/ocis-mcp-server/releases"
+                >Download binary →</a
+              >
               <a class="link-sm" href="https://github.com/owncloud/ocis-mcp-server">owncloud/ocis-mcp-server →</a>
               <a class="link-sm" href="https://github.com/owncloud/ocis-mcp-server/releases">Changelog →</a>
             </div>
@@ -217,23 +215,20 @@
         <div class="legacy-row">
           <div class="legacy-main">
             <h2 id="oc10-title" class="h3">
-              Server · ownCloud 10 <span class="tag-classic">Classic</span>
+              <span class="dim">Server / Classic /</span> ownCloud 10 &amp; ownCloud 11
             </h2>
             <p class="legacy-note">
-              Recommended only for environments not yet ready to migrate to oCIS.
-              See the
-              <a href="https://doc.owncloud.com/server/next/admin_manual/migration/">migration guide</a>
-              for the path forward.
+              The classic ownCloud server. See the
+              <a href="https://doc.owncloud.com/ocis/next/">oCIS documentation</a>
+              if you're moving to Infinite Scale.
             </p>
           </div>
           <div class="legacy-links">
-            <a class="legacy-link" href="https://github.com/owncloud/core/releases/latest"
-              >Latest tarball →</a
-            >
-            <a class="legacy-link" href="https://github.com/owncloud/core/releases">Changelog →</a>
+            <a class="legacy-link" href="https://owncloud.com/download-server/">Download →</a>
+            <a class="legacy-link" href="https://owncloud.com/changelog/server/">Changelog →</a>
             <div class="cmd cmd-sm" data-copy="docker pull owncloud/server:latest">
               <code><span class="prompt">$</span> docker pull owncloud/server:latest</code>
-              <button class="copy" type="button" aria-label="Copy ownCloud 10 Docker pull command">copy</button>
+              <button class="copy" type="button" aria-label="Copy ownCloud server Docker pull command">copy</button>
             </div>
           </div>
         </div>
