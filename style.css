@@ -724,10 +724,10 @@ main.wrap {
 /* =========================================================================
    §03 LEGACY OC10  (demoted)
    ========================================================================= */
-.sec-legacy {
+.sec-classic {
   margin-bottom: var(--sec-gap);
 }
-.legacy-row {
+.classic-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -739,21 +739,21 @@ main.wrap {
   border-radius: var(--radius);
   background: transparent;
 }
-.legacy-main {
+.classic-main {
   max-width: 60ch;
 }
-.legacy-note {
+.classic-note {
   margin: 0.5rem 0 0;
   font-size: 0.88rem;
   color: var(--muted);
 }
-.legacy-links {
+.classic-links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   align-items: flex-end;
 }
-.legacy-link {
+.classic-link {
   font-family: var(--mono);
   font-size: 0.82rem;
 }
@@ -990,7 +990,7 @@ main.wrap {
     flex-direction: column;
     gap: 0.3rem;
   }
-  .legacy-links {
+  .classic-links {
     align-items: stretch;
     width: 100%;
   }
