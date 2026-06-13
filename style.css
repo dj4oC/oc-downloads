@@ -238,6 +238,18 @@ main.wrap {
   border: 0;
   background: var(--accent);
 }
+.claim {
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.7vw, 1.2rem);
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.claim::before {
+  content: '▸ ';
+  color: var(--accent);
+}
 .subline {
   max-width: 34ch;
   margin: 0 0 1.8rem;
@@ -540,6 +552,12 @@ main.wrap {
 .parts-2 {
   grid-template-columns: repeat(2, 1fr);
 }
+/* oCIS section flows 4 parts: 4-up on wide, wrapping to 2-up then 1-up */
+.parts-ocis {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
 .part {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -583,6 +601,14 @@ main.wrap {
   font-size: 1.6rem;
   line-height: 1;
   color: var(--muted);
+}
+.glyph-svg {
+  display: block;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+.part:hover .glyph-svg {
+  color: var(--accent);
 }
 
 /* binary list */
@@ -713,7 +739,7 @@ main.wrap {
 .legacy-main {
   max-width: 60ch;
 }
-.tag-superseded {
+.tag-classic {
   display: inline-block;
   margin-left: 0.5rem;
   padding: 0.15rem 0.5rem;
