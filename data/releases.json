@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T09:58:31Z",
+  "generated_at": "2026-07-02T09:20:56Z",
   "ocis": [
     {
       "tag_name": "v8.0.5",
@@ -259,16 +259,16 @@
   ],
   "android": [
     {
-      "tag_name": "v4.8.1",
-      "name": "v4.8.1",
-      "published_at": "2026-06-08T10:53:28Z",
-      "html_url": "https://github.com/owncloud/android/releases/tag/v4.8.1",
-      "body": "- Security - SSL certificate verification and trusted host handling: https://github.com/owncloud/android/pull/4861 - Bugfix - Crash from Google Play Console in FileDetailsFragment: https://github.com/owncloud/android/issues/4737 - Bugfix - Crash from Google Play Console in ReceiveExternalFilesActivi",
+      "tag_name": "v4.8.2",
+      "name": "v4.8.2",
+      "published_at": "2026-07-01T11:58:21Z",
+      "html_url": "https://github.com/owncloud/android/releases/tag/v4.8.2",
+      "body": "- Security - Redact cookie headers in logs: https://github.com/owncloud/android/pull/4897 - Bugfix - Infinite edges: https://github.com/owncloud/android/issues/4576 - Bugfix - Remove useless debug manifest file: https://github.com/owncloud/android/pull/4901",
       "assets": [
         {
-          "name": "owncloud_4.8.1-original-release.apk",
-          "browser_download_url": "https://github.com/owncloud/android/releases/download/v4.8.1/owncloud_4.8.1-original-release.apk",
-          "size": 14443109
+          "name": "owncloud_4.8.2-original-release.apk",
+          "browser_download_url": "https://github.com/owncloud/android/releases/download/v4.8.2/owncloud_4.8.2-original-release.apk",
+          "size": 14447601
         }
       ]
     }
