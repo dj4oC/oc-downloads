@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T08:36:12Z",
+  "generated_at": "2026-07-22T08:35:41Z",
   "ocis": [
     {
       "tag_name": "v8.0.6",
@@ -411,16 +411,16 @@
   ],
   "android": [
     {
-      "tag_name": "v4.8.2",
-      "name": "v4.8.2",
-      "published_at": "2026-07-01T11:58:21Z",
-      "html_url": "https://github.com/owncloud/android/releases/tag/v4.8.2",
-      "body": "- Security - Redact cookie headers in logs: https://github.com/owncloud/android/pull/4897 - Bugfix - Infinite edges: https://github.com/owncloud/android/issues/4576 - Bugfix - Remove useless debug manifest file: https://github.com/owncloud/android/pull/4901",
+      "tag_name": "v4.8.3",
+      "name": "v4.8.3",
+      "published_at": "2026-07-21T10:33:20Z",
+      "html_url": "https://github.com/owncloud/android/releases/tag/v4.8.3",
+      "body": "- Bugfix - Fix Help url: https://github.com/owncloud/android/pull/4931",
       "assets": [
         {
-          "name": "owncloud_4.8.2-original-release.apk",
-          "browser_download_url": "https://github.com/owncloud/android/releases/download/v4.8.2/owncloud_4.8.2-original-release.apk",
-          "size": 14447601
+          "name": "owncloud_4.8.3-original-release.apk",
+          "browser_download_url": "https://github.com/owncloud/android/releases/download/v4.8.3/owncloud_4.8.3-original-release.apk",
+          "size": 14447613
         }
       ]
     }
