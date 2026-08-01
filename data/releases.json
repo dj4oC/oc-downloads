@@ -1,6 +1,85 @@
 {
-  "generated_at": "2026-07-31T08:56:01Z",
+  "generated_at": "2026-08-01T08:26:57Z",
   "ocis": [
+    {
+      "tag_name": "v8.0.7",
+      "name": "v8.0.7",
+      "published_at": "2026-07-31T13:01:46Z",
+      "html_url": "https://github.com/owncloud/ocis/releases/tag/v8.0.7",
+      "body": "* [Changelog for 8.0.7](#changelog-for-807-2026-07-31) * Bugfix - Return correct issuerAssignedId on /me: [#12635](https://github.com/owncloud/ocis/pull/12635) * Bugfix - Log unmapped thumbnail errors and always report a sabredav exception: [#12663](https://github.com/owncloud/ocis/pull/12663) * Enh",
+      "assets": [
+        {
+          "name": "End-User-License-Agreement-for-ownCloud-Infinite-Scale.pdf",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/End-User-License-Agreement-for-ownCloud-Infinite-Scale.pdf",
+          "size": 77879
+        },
+        {
+          "name": "ocis-8.0.7-darwin-amd64",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-darwin-amd64",
+          "size": 137609760
+        },
+        {
+          "name": "ocis-8.0.7-darwin-amd64.sha256",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-darwin-amd64.sha256",
+          "size": 90
+        },
+        {
+          "name": "ocis-8.0.7-darwin-arm64",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-darwin-arm64",
+          "size": 131996498
+        },
+        {
+          "name": "ocis-8.0.7-darwin-arm64.sha256",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-darwin-arm64.sha256",
+          "size": 90
+        },
+        {
+          "name": "ocis-8.0.7-linux-386",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-386",
+          "size": 129310904
+        },
+        {
+          "name": "ocis-8.0.7-linux-386.sha256",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-386.sha256",
+          "size": 87
+        },
+        {
+          "name": "ocis-8.0.7-linux-amd64",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-amd64",
+          "size": 138664848
+        },
+        {
+          "name": "ocis-8.0.7-linux-amd64.sha256",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-amd64.sha256",
+          "size": 89
+        },
+        {
+          "name": "ocis-8.0.7-linux-arm",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-arm",
+          "size": 129237176
+        },
+        {
+          "name": "ocis-8.0.7-linux-arm.sha256",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-arm.sha256",
+          "size": 87
+        },
+        {
+          "name": "ocis-8.0.7-linux-arm64",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-arm64",
+          "size": 142868833
+        },
+        {
+          "name": "ocis-8.0.7-linux-arm64.sha256",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/ocis-8.0.7-linux-arm64.sha256",
+          "size": 89
+        },
+        {
+          "name": "third-party-licenses.tar.gz",
+          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.7/third-party-licenses.tar.gz",
+          "size": 701469
+        }
+      ]
+    },
     {
       "tag_name": "v8.0.6",
       "name": "v8.0.6",
@@ -156,85 +235,6 @@
           "name": "third-party-licenses.tar.gz",
           "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.1.0/third-party-licenses.tar.gz",
           "size": 720127
-        }
-      ]
-    },
-    {
-      "tag_name": "v8.0.5",
-      "name": "v8.0.5",
-      "published_at": "2026-06-19T10:06:37Z",
-      "html_url": "https://github.com/owncloud/ocis/releases/tag/v8.0.5",
-      "body": "* [Changelog for 8.0.5](#changelog-for-805-2026-06-18) * Security - Bump Go to 1.25.11: [#12446](https://github.com/owncloud/ocis/pull/12446) * Security - Upgrade libvips to 8.18.3: [#12446](https://github.com/owncloud/ocis/pull/12446) * Bugfix - Education user delete no longer 404s and leaves the L",
-      "assets": [
-        {
-          "name": "End-User-License-Agreement-for-ownCloud-Infinite-Scale.pdf",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/End-User-License-Agreement-for-ownCloud-Infinite-Scale.pdf",
-          "size": 77879
-        },
-        {
-          "name": "ocis-8.0.5-darwin-amd64",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-darwin-amd64",
-          "size": 137346608
-        },
-        {
-          "name": "ocis-8.0.5-darwin-amd64.sha256",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-darwin-amd64.sha256",
-          "size": 90
-        },
-        {
-          "name": "ocis-8.0.5-darwin-arm64",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-darwin-arm64",
-          "size": 131743714
-        },
-        {
-          "name": "ocis-8.0.5-darwin-arm64.sha256",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-darwin-arm64.sha256",
-          "size": 90
-        },
-        {
-          "name": "ocis-8.0.5-linux-386",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-386",
-          "size": 129052856
-        },
-        {
-          "name": "ocis-8.0.5-linux-386.sha256",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-386.sha256",
-          "size": 87
-        },
-        {
-          "name": "ocis-8.0.5-linux-amd64",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-amd64",
-          "size": 138409008
-        },
-        {
-          "name": "ocis-8.0.5-linux-amd64.sha256",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-amd64.sha256",
-          "size": 89
-        },
-        {
-          "name": "ocis-8.0.5-linux-arm",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-arm",
-          "size": 128909496
-        },
-        {
-          "name": "ocis-8.0.5-linux-arm.sha256",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-arm.sha256",
-          "size": 87
-        },
-        {
-          "name": "ocis-8.0.5-linux-arm64",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-arm64",
-          "size": 142606689
-        },
-        {
-          "name": "ocis-8.0.5-linux-arm64.sha256",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/ocis-8.0.5-linux-arm64.sha256",
-          "size": 89
-        },
-        {
-          "name": "third-party-licenses.tar.gz",
-          "browser_download_url": "https://github.com/owncloud/ocis/releases/download/v8.0.5/third-party-licenses.tar.gz",
-          "size": 721049
         }
       ]
     }
