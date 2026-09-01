@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T13:12:31Z",
+  "generated_at": "2026-09-01T11:24:01Z",
   "ocis": [
     {
       "tag_name": "v8.0.8",
@@ -411,16 +411,16 @@
   ],
   "android": [
     {
-      "tag_name": "v4.8.3",
-      "name": "v4.8.3",
-      "published_at": "2026-07-21T10:33:20Z",
-      "html_url": "https://github.com/owncloud/android/releases/tag/v4.8.3",
-      "body": "- Bugfix - Fix Help url: https://github.com/owncloud/android/pull/4931",
+      "tag_name": "v4.8.4",
+      "name": "v4.8.4",
+      "published_at": "2026-08-31T14:47:29Z",
+      "html_url": "https://github.com/owncloud/android/releases/tag/v4.8.4",
+      "body": "- Security - Prevent bypassing passcode, pattern and biometric lock: [#4958](https://github.com/owncloud/android/issues/4958)",
       "assets": [
         {
-          "name": "owncloud_4.8.3-original-release.apk",
-          "browser_download_url": "https://github.com/owncloud/android/releases/download/v4.8.3/owncloud_4.8.3-original-release.apk",
-          "size": 14447613
+          "name": "owncloud_4.8.4-original-release.apk",
+          "browser_download_url": "https://github.com/owncloud/android/releases/download/v4.8.4/owncloud_4.8.4-original-release.apk",
+          "size": 14447953
         }
       ]
     }
